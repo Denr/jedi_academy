@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for jedi in jedi_list %}
+        <div>
+            <h3>Джедай {{ jedi.name }} с {{ jedi.padawans_count }} падаваном(ми)</h3>
+        </div>
+    {% empty %}
+        <h3>К сожалению ни одного Джедая пока нет :(</h3>
+    {% endfor %}
+{% endblock %}

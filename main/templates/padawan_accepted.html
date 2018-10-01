@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>{{ candidate.name }} был зачислен к Вам в падаваны.</h3>
+    Мы отправили ему письмо с поздравлениями.
+    <br>
+    <a href="{% url 'candidate_list' %}">
+        <input type="button" value="Вернуться к списку кандидатов">
+    </a>
+{% endblock %}

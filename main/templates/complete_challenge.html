@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Испытание пройдено{% endblock %}
+{% block content %}
+    <h3>Испытание пройдено!</h3>
+    <div>
+        Если зачислены были Вы в падаваны, то письмо на указанный email Вам придет.
+    </div>
+    <div>
+        <img src="https://vignette.wikia.nocookie.net/ru.starwars/images/3/37/Yoda_infobox.png/revision/latest?cb=20180607090744"
+             alt="Yoda">
+    </div>
+    <a href="{% url 'index' %}">
+        <input type="button" value="Вернуться на главную страницу">
+    </a>
+{% endblock %}

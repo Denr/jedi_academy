@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Далее</button>
+    </form>
+    <br>
+    <a href="{% url 'jedi_list_all' %}">
+        <input type="button" name="category" value="Вывести полный список Джедаев с количеством падаванов">
+    </a>
+    <a href="{% url 'jedi_list_more_one' %}">
+        <input type="button" name="category" value="Вывести список Джедаев у которых больше одного падавана">
+    </a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{% url 'create_candidate' %}">
+        <input type="button" name="category" value="Для кандидатов">
+    </a>
+    <a href="{% url 'select_jedi' %}">
+        <input type="button" name="category" value="Для Джедаев">
+    </a>
+{% endblock %}

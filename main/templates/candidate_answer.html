@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>Имя кандидата: {{ candidate.name }}</h3>
+    {% if candidate.answers.count == 0 %}
+        Кандидат еще не ответил на вопросы.
+    {% else %}
+        <h3>Ответы кандидата:</h3>
+        {% for answer in candidate.answers.all %}
+            <div>
+                Вопрос: {{ answer.question.question_text }}, Ответ: {{ answer.answer_text.to_yes_no }}
+            </div>
+        {% endfor %}
+        <br>
+        {% if jedi.candidates.count >= 3 %}
+            У Вас и так уже 3 падавана. Пока Вы не можете взять себе новых падаванов.
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" value="Зачислить в падаваны!">
+            </form>
+        {% endif %}
+    {% endif %}
+{% endblock %}

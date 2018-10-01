@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for candidate in candidate_list %}
+        <div>
+            <h3>{{ candidate.name }}</h3>
+            <a href="{% url 'candidate_answer' candidate.pk %}"><input type="button" value="Посмотреть ответы"></a>
+        </div>
+    {% empty %}
+        <h3>К сожалению кандидатов с Вашей планеты пока нет :(</h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Пройди испытание{% endblock %}
+{% block content %}
+    {{ question }}
+    <form method="post">
+        {% csrf_token %}
+        {% for radio in form.answer_text %}
+            <p>{{ radio }}</p>
+        {% endfor %}
+        <input type="submit" value="Далее">
+    </form>
+{% endblock %}
