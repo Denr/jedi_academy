@@ -7,7 +7,7 @@
         <h3>Ответы кандидата:</h3>
         {% for answer in candidate.answers.all %}
             <div>
-                Вопрос: {{ answer.question.question_text }}, Ответ: {{ answer.answer_text.to_yes_no }}
+                Вопрос: {{ answer.question.question_text }}, Ответ: {{ answer.answer_text }}
             </div>
         {% endfor %}
         <br>
